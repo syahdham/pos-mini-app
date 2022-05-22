@@ -5,6 +5,7 @@ This project use
 - PHP >= 7.4
 - Laravel 8
 - PostgreSQL
+- NPM / Yarn (Node Js)
 
 #### Installation
 
@@ -12,9 +13,9 @@ Clone the repository
 
 ~~~
 https://github.com/syahdham/pos-mini-app.git
-
+~~~
 or
-
+~~~
 git@github.com:syahdham/pos-mini-app.git
 ~~~
 
