@@ -52,6 +52,12 @@ Run database migration and seeder (<b>Make sure you've already set the database 
 php artisan migrate --seed
 ~~~
 
+Storage link
+
+~~~
+php artisan storage:link
+~~~
+
 Start the local development server
 
 ~~~
