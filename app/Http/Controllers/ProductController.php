@@ -6,7 +6,6 @@ use DB;
 use App\Models\Product;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use App\Models\TemporaryFile;
 use App\Services\ProductService;
 use App\DataTables\ProductDataTable;
 use App\Http\Requests\ProductRequest;
@@ -48,15 +47,7 @@ class ProductController extends Controller
 
             $product = Product::create($request->validated());
 
-            $temporaryFile = TemporaryFile::where('folder', $request->product_file)->first();
-
-            if($temporaryFile) {
-                $product->addMedia(storage_path('app/product_image/tmp/'. $request->product_file . '/' . $temporaryFile->filename))
-                    ->toMediaCollection('product-image');
-
-                rmdir(storage_path('app/product_image/tmp/'. $request->product_file));
-                $temporaryFile->delete();
-            }
+            $service->handleUploadPermanentImage($product, $request->product_file);
 
             DB::commit();
 

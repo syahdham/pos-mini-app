@@ -18,7 +18,7 @@
                     </div>
                 </div>
             </div>
-            <div class="card-text mt-2">
+            <div class="card-text mt-2 mb-lg-5">
                 <span class="desc">{!! $product->description !!} </span>
             </div>
             <div class="text-center mt-auto">
